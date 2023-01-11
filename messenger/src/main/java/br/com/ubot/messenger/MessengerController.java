@@ -45,6 +45,8 @@ public class MessengerController {
     @PostMapping("/messenger")
     public ResponseEntity<String> messenger(@RequestBody ReceiveEvent body) {
         System.out.println(body);
+        System.out.println(body.getEntry().get(0).getMessaging().get(0).getMessage().getText());
+        System.out.println(body.getEntry().get(0).getMessaging().get(0).getSender().getId());
         if (body != null) {
             return ResponseEntity.ok("EVENT_RECEIVED");
         } else {

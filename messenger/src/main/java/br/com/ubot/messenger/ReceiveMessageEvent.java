@@ -2,27 +2,27 @@ package br.com.ubot.messenger;
 
 public class ReceiveMessageEvent {
 
-    private String message;
+    private String text;
 
     public ReceiveMessageEvent() {
     }
 
-    public ReceiveMessageEvent(String message) {
-        this.message = message;
+    public String getText() {
+        return text;
     }
 
-    public String getMessage() {
-        return message;
+    public void setText(String text) {
+        this.text = text;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public ReceiveMessageEvent(String text) {
+        this.text = text;
     }
 
     @Override
     public String toString() {
         return "ReceiveMessageEvent{" +
-                "message='" + message + '\'' +
+                "text='" + text + '\'' +
                 '}';
     }
 }

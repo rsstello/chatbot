@@ -3,31 +3,37 @@ package br.com.ubot.messenger;
 import java.util.List;
 import java.util.Map;
 
+import br.com.ubot.messenger.ReceiveSenderEvent;
+import br.com.ubot.messenger.ReceiveMessageEvent;
+
 public class ReceiveMessagingEvent {
     public ReceiveMessagingEvent() {
     }
 
-    private Map <String, Object> sender;
-    private Map <String, Object> message;
 
-    public ReceiveMessagingEvent(Map<String, Object> sender, Map<String, Object> message) {
+    private ReceiveSenderEvent sender;
+    private ReceiveMessageEvent message;
+    //private Map<String, Object> message;
+
+
+    public ReceiveMessagingEvent(ReceiveSenderEvent sender, ReceiveMessageEvent message) {
         this.sender = sender;
         this.message = message;
     }
 
-    public Map<String, Object> getSender() {
+    public ReceiveSenderEvent getSender() {
         return sender;
     }
 
-    public void setSender(Map<String, Object> sender) {
+    public void setSender(ReceiveSenderEvent sender) {
         this.sender = sender;
     }
 
-    public Map<String, Object> getMessage() {
+    public ReceiveMessageEvent getMessage() {
         return message;
     }
 
-    public void setMessage(Map<String, Object> message) {
+    public void setMessage(ReceiveMessageEvent message) {
         this.message = message;
     }
 
@@ -39,3 +45,4 @@ public class ReceiveMessagingEvent {
                 '}';
     }
 }
+
